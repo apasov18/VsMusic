@@ -40,6 +40,8 @@ namespace VsMusic
             blackLine.BackColor = Color.Gray;
         }
         #endregion
+
+
         float currentValue = 50;
         public float Value { get; set; }
         private void volumeControl_MouseClick(object sender, MouseEventArgs e)
@@ -52,7 +54,7 @@ namespace VsMusic
         }
         private void whiteLine_MouseClick(object sender, MouseEventArgs e)
         {
-            float percent = ((float)e.X + whiteLine.Width) / volumeControl.Width * 100.0f;
+            float percent = ((float)e.X + blackLine.Width) / volumeControl.Width * 100.0f;
             currentValue = percent;
             UpdateVolumeControl();
         }
@@ -61,14 +63,14 @@ namespace VsMusic
             if (e.Delta > 0)
             {
                 if (currentValue < 100)
-                    currentValue += 5;
+                    currentValue += 2;
             }
 
             else
             {
                 if (currentValue > 0)
                 {
-                    currentValue -= 5;
+                    currentValue -= 2;
                 }
             }
 
@@ -85,8 +87,8 @@ namespace VsMusic
             {
                 value = 100;
             }
-            Value = value;
-            ChangeVolume.Invoke(this, EventArgs.Empty);
+            //Value = value;
+            //ChangeVolume.Invoke(this, EventArgs.Empty);
             volumeControl.ColumnStyles[0].Width = value;
 
             volumeControl.ColumnStyles[1].Width = 100 - value;
@@ -94,16 +96,16 @@ namespace VsMusic
         bool mute = false;
         private void pictureVolume_Click(object sender, EventArgs e)
         {
-            mute = !mute;
-            if (mute)
-            {
-                pictureVolume.Image = Properties.Resources.volumeMute;
-            }
-            else
-            {
-                pictureVolume.Image = Properties.Resources.volume;
+            //mute = !mute;
+            //if (mute)
+            //{
+            //    pictureVolume.Image = Properties.Resources.volumeMute;
+            //}
+            //else
+            //{
+            //    pictureVolume.Image = Properties.Resources.volume;
 
-            }
+            //}
             UpdateVolumeControl();
         }
 

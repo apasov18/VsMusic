@@ -71,8 +71,8 @@
             // volumeControl
             // 
             volumeControl.ColumnCount = 2;
-            volumeControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            volumeControl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+            volumeControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            volumeControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             volumeControl.Controls.Add(whiteLine, 0, 0);
             volumeControl.Controls.Add(blackLine, 0, 0);
             volumeControl.Location = new Point(78, 8);
@@ -83,18 +83,18 @@
             volumeControl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             volumeControl.Size = new Size(196, 64);
             volumeControl.TabIndex = 1;
-            volumeControl.MouseClick += VolumeControl_MouseWheel;
+            volumeControl.MouseClick += volumeControl_MouseClick;
             // 
             // whiteLine
             // 
             whiteLine.AutoSize = true;
             whiteLine.BackColor = Color.White;
             whiteLine.Dock = DockStyle.Fill;
-            whiteLine.Location = new Point(116, 19);
+            whiteLine.Location = new Point(98, 19);
             whiteLine.Margin = new Padding(0);
             whiteLine.Name = "whiteLine";
             whiteLine.Padding = new Padding(0, 20, 0, 20);
-            whiteLine.Size = new Size(80, 26);
+            whiteLine.Size = new Size(98, 26);
             whiteLine.TabIndex = 1;
             whiteLine.MouseClick += whiteLine_MouseClick;
             // 
@@ -107,7 +107,7 @@
             blackLine.Margin = new Padding(0);
             blackLine.Name = "blackLine";
             blackLine.Padding = new Padding(0, 20, 0, 20);
-            blackLine.Size = new Size(116, 26);
+            blackLine.Size = new Size(98, 26);
             blackLine.TabIndex = 0;
             blackLine.MouseClick += volumeControl_MouseClick;
             // 
