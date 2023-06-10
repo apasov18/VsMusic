@@ -64,10 +64,16 @@ namespace VsMusic
                 playlist.Description = directory.CreationTime.ToString("MM/yyyy");
                 playlist.FilePath = directory.FullName;
                 playlist.PlaylistChanged += Playlist_PlaylistChanged;
+                string image = Path.Combine(dir, "index.gif");
+                if (File.Exists(image))
+                {
+                    Bitmap bitmap = new Bitmap(image);
+                    playlist.PlaylistImage = bitmap;
+                }
                 playListArea.Controls.Add(playlist);
 
             }
-            playlistItem? playlist1 =  playListArea.Controls[0] as playlistItem;
+            playlistItem? playlist1 = playListArea.Controls[0] as playlistItem;
             if (playlist1 != null)
             {
                 ShowPlaylist(playlist1);
@@ -84,20 +90,21 @@ namespace VsMusic
             }
         }
 
-        public void ShowPlaylist (playlistItem playlist)
+        public void ShowPlaylist(playlistItem playlist)
         {
             musicArea.Controls.Clear();
 
-            string[] files = Directory.GetFiles(playlist.FilePath,"*.mp3");
+            string[] files = Directory.GetFiles(playlist.FilePath, "*.mp3");
             foreach (var musicTrack in files)
             {
                 FileInfo file = new FileInfo(musicTrack);
                 MusicItem newTrack = new MusicItem();
-                newTrack.Description = file.Name.Replace(".mp3", "");
-                newTrack.Title = "♫";
+                newTrack.Title = file.Name.Replace(".mp3", "");
+                newTrack.Description = playlist.Title;
                 newTrack.FilePath = file.FullName;
                 newTrack.MusicPlay += NewTrack_MusicPlay;
                 newTrack.MusicHover += NewTrack_MusicHover;
+                newTrack.TrackImage = playlist.PlaylistImage;
                 musicArea.Controls.Add(newTrack);
             }
         }

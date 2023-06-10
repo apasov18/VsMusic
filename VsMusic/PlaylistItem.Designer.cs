@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             playListArea = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
+            picAlbum = new PictureBox();
             titleArea = new TableLayoutPanel();
             description = new Label();
             title = new Label();
             playListArea.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAlbum).BeginInit();
             titleArea.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             playListArea.ColumnCount = 2;
             playListArea.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             playListArea.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            playListArea.Controls.Add(pictureBox1, 0, 0);
+            playListArea.Controls.Add(picAlbum, 0, 0);
             playListArea.Controls.Add(titleArea, 1, 0);
             playListArea.Dock = DockStyle.Fill;
             playListArea.Location = new Point(0, 0);
@@ -55,16 +55,16 @@
             playListArea.Size = new Size(266, 60);
             playListArea.TabIndex = 0;
             // 
-            // pictureBox1
+            // picAlbum
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.thumb;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(54, 54);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picAlbum.Dock = DockStyle.Fill;
+            picAlbum.Image = Properties.Resources.thumb;
+            picAlbum.Location = new Point(3, 3);
+            picAlbum.Name = "picAlbum";
+            picAlbum.Size = new Size(54, 54);
+            picAlbum.SizeMode = PictureBoxSizeMode.Zoom;
+            picAlbum.TabIndex = 0;
+            picAlbum.TabStop = false;
             // 
             // titleArea
             // 
@@ -119,7 +119,7 @@
             Name = "playlistItem";
             Size = new Size(266, 60);
             playListArea.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAlbum).EndInit();
             titleArea.ResumeLayout(false);
             titleArea.PerformLayout();
             ResumeLayout(false);
@@ -128,7 +128,7 @@
         #endregion
 
         private TableLayoutPanel playListArea;
-        private PictureBox pictureBox1;
+        private PictureBox picAlbum;
         private TableLayoutPanel titleArea;
         private Label title;
         private Label description;

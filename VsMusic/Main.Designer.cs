@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             musicArea = new FlowLayoutPanel();
-            trackBar1 = new TrackBar();
-            folderBrowserDialog1 = new FolderBrowserDialog();
+            trackBar1 = new MusicTrackBar();
             playListArea = new FlowLayoutPanel();
             SuspendLayout();
             // 
@@ -74,8 +74,9 @@
             Controls.Add(musicArea);
             Controls.Add(trackBar1);
             ForeColor = Color.Black;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
-            Text = "Form1";
+            Text = "Black Music";
             Load += Main_Load;
             ResumeLayout(false);
         }
@@ -83,8 +84,7 @@
         #endregion
 
         private FlowLayoutPanel musicArea;
-        private TrackBar trackBar1;
-        private FolderBrowserDialog folderBrowserDialog1;
+        private MusicTrackBar trackBar1;
         private FlowLayoutPanel playListArea;
     }
 }

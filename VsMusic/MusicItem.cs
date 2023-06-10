@@ -179,6 +179,19 @@ namespace VsMusic
                 filePath = value;
             }
         }
+        [Category("Свойства трека")]
+        public Image TrackImage
+        {
+            get
+            {
+                return image.Image;
+            }
+            set
+            {
+                image.Image = value;
+            }
+
+        }
         #endregion
 
     }

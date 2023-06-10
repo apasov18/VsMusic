@@ -84,7 +84,18 @@ namespace VsMusic
 
         string filePath;
 
+        public Image PlaylistImage
+        {
+            get
+            {
+                return picAlbum.Image;
+            }
+            set
+            {
+                picAlbum.Image = value;
+            }
 
+        }
 
         public string FilePath
         {

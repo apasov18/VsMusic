@@ -1,9 +1,10 @@
 ﻿
 using NAudio.Wave;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace VsMusic
 {
-    public partial class TrackBar : UserControl
+    public partial class MusicTrackBar : UserControl
 
     {
         IWavePlayer _wavePlayer;
@@ -13,11 +14,13 @@ namespace VsMusic
         public event EventHandler PlayPrevios;
 
         bool play;
-        public TrackBar()
+        public MusicTrackBar()
         {
             InitializeComponent();
             playPause.CustomClick += PlayPauseClick;
+            VolumeControl.ChangeVolume += VolumeControl_ChangeVolume;
         }
+
         private void next_CustomClick(object sender, EventArgs e)
         {
             PlayNext.Invoke(sender, e);
@@ -62,7 +65,7 @@ namespace VsMusic
             _wavePlayer.Init(_audioFileReader);
             _wavePlayer.Play();
             audioTime.Start();
-            _wavePlayer.Volume = 0.3f;
+            _wavePlayer.Volume = (float)(VolumeControl.Value / 100.0);
             playPause.ButtonImage = Properties.Resources.pause;
             play = true;
         }
@@ -83,6 +86,16 @@ namespace VsMusic
             TimeSpan result = _audioFileReader.TotalTime * percent;
             _audioFileReader.CurrentTime = result;
 
+        }
+
+
+        private void VolumeControl_ChangeVolume(object? sender, EventArgs e)
+        {
+            if (_wavePlayer != null)
+            {
+                _wavePlayer.Volume = (float)(VolumeControl.Value / 100.0);
+
+            }
         }
 
     }
