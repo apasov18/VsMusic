@@ -87,8 +87,8 @@ namespace VsMusic
             {
                 value = 100;
             }
-            //Value = value;
-            //ChangeVolume.Invoke(this, EventArgs.Empty);
+            Value = value;
+            ChangeVolume.Invoke(this, EventArgs.Empty);
             volumeControl.ColumnStyles[0].Width = value;
 
             volumeControl.ColumnStyles[1].Width = 100 - value;
@@ -96,16 +96,16 @@ namespace VsMusic
         bool mute = false;
         private void pictureVolume_Click(object sender, EventArgs e)
         {
-            //mute = !mute;
-            //if (mute)
-            //{
-            //    pictureVolume.Image = Properties.Resources.volumeMute;
-            //}
-            //else
-            //{
-            //    pictureVolume.Image = Properties.Resources.volume;
+            mute = !mute;
+            if (mute)
+            {
+                pictureVolume.Image = Properties.Resources.volumeMute;
+            }
+            else
+            {
+                pictureVolume.Image = Properties.Resources.volume;
 
-            //}
+            }
             UpdateVolumeControl();
         }
 

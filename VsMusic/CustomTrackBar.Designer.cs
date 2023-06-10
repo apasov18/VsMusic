@@ -53,16 +53,16 @@
             areaVolumeControl.Padding = new Padding(8);
             areaVolumeControl.RowCount = 1;
             areaVolumeControl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            areaVolumeControl.Size = new Size(282, 80);
+            areaVolumeControl.Size = new Size(282, 68);
             areaVolumeControl.TabIndex = 0;
             // 
             // pictureVolume
             // 
             pictureVolume.Anchor = AnchorStyles.None;
             pictureVolume.Image = Properties.Resources.volume;
-            pictureVolume.Location = new Point(18, 21);
+            pictureVolume.Location = new Point(15, 11);
             pictureVolume.Name = "pictureVolume";
-            pictureVolume.Size = new Size(50, 37);
+            pictureVolume.Size = new Size(55, 46);
             pictureVolume.SizeMode = PictureBoxSizeMode.Zoom;
             pictureVolume.TabIndex = 0;
             pictureVolume.TabStop = false;
@@ -78,10 +78,10 @@
             volumeControl.Location = new Point(78, 8);
             volumeControl.Margin = new Padding(0);
             volumeControl.Name = "volumeControl";
-            volumeControl.Padding = new Padding(0, 19, 0, 19);
+            volumeControl.Padding = new Padding(0, 22, 0, 22);
             volumeControl.RowCount = 1;
             volumeControl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            volumeControl.Size = new Size(196, 64);
+            volumeControl.Size = new Size(196, 52);
             volumeControl.TabIndex = 1;
             volumeControl.MouseClick += volumeControl_MouseClick;
             // 
@@ -90,11 +90,11 @@
             whiteLine.AutoSize = true;
             whiteLine.BackColor = Color.White;
             whiteLine.Dock = DockStyle.Fill;
-            whiteLine.Location = new Point(98, 19);
+            whiteLine.Location = new Point(98, 22);
             whiteLine.Margin = new Padding(0);
             whiteLine.Name = "whiteLine";
             whiteLine.Padding = new Padding(0, 20, 0, 20);
-            whiteLine.Size = new Size(98, 26);
+            whiteLine.Size = new Size(98, 8);
             whiteLine.TabIndex = 1;
             whiteLine.MouseClick += whiteLine_MouseClick;
             // 
@@ -103,11 +103,11 @@
             blackLine.AutoSize = true;
             blackLine.BackColor = Color.Gray;
             blackLine.Dock = DockStyle.Fill;
-            blackLine.Location = new Point(0, 19);
+            blackLine.Location = new Point(0, 22);
             blackLine.Margin = new Padding(0);
             blackLine.Name = "blackLine";
             blackLine.Padding = new Padding(0, 20, 0, 20);
-            blackLine.Size = new Size(98, 26);
+            blackLine.Size = new Size(98, 8);
             blackLine.TabIndex = 0;
             blackLine.MouseClick += volumeControl_MouseClick;
             // 
@@ -118,7 +118,7 @@
             BackColor = Color.LightGray;
             Controls.Add(areaVolumeControl);
             Name = "CustomTrackBar";
-            Size = new Size(282, 80);
+            Size = new Size(282, 68);
             areaVolumeControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureVolume).EndInit();
             volumeControl.ResumeLayout(false);

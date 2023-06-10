@@ -75,6 +75,8 @@
             Controls.Add(trackBar1);
             ForeColor = Color.Black;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(1383, 757);
+            MinimumSize = new Size(1383, 757);
             Name = "Main";
             Text = "Black Music";
             Load += Main_Load;
